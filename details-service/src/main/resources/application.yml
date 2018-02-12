@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: details-service
+  devtools:
+    livereload:
+      enabled: true
+  profiles: dev
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 50
+
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    leaseExpirationDurationInSeconds: 20
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
+
+
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+logging:
+  level: debug
+
