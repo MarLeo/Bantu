@@ -4,23 +4,22 @@ spring:
   devtools:
     livereload:
       enabled: true
-  profiles: dev
+
+server:
+  port: 0
 
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
     healthcheck:
       enabled: true
-    lease:
-      duration: 50
-
+    #serviceUrl:
+     # defaultZone: http://127.0.0.1:8761/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
-    leaseExpirationDurationInSeconds: 20
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}:${random.value}}
-
 
 security:
   basic:
@@ -29,6 +28,5 @@ security:
 management:
   security:
     enabled: false
-logging:
-  level: debug
+
 

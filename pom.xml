@@ -17,6 +17,8 @@
         <java.version>1.8</java.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
+        <emoji4j.version>5.0</emoji4j.version>
+        <hystrix-core.version>1.5.12</hystrix-core.version>
     </properties>
 
 
@@ -28,7 +30,38 @@
     <modules>
         <module>eureka-server</module>
         <module>details-service</module>
+        <module>product-service</module>
+        <module>fastpass-service</module>
+        <module>tollrate-billboard-service</module>
+        <module>fastpass-console</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.kcthota</groupId>
+            <artifactId>emoji4j</artifactId>
+            <version>${emoji4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>${hystrix-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>${hystrix-core.version}</version>
+        </dependency>
+    </dependencies>
+
+    <developers>
+        <developer>
+            <id>swagger</id>
+            <name>Martin Tchokonthe</name>
+            <email>martin.aurele12@gmail.com</email>
+            <organization>Tchokonthe's Brothers</organization>
+        </developer>
+    </developers>
 
 
 </project>

@@ -9,13 +9,15 @@ server:
   port: ${PORT:8761}
 
 eureka:
+  datacenter: Yaounde
+  environment: dev
   instance:
     hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #serviceUrl:
+     # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 security:
   basic:
